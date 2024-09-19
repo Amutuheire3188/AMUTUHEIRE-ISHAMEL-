@@ -1,1 +1,23 @@
 
+<?php
+// Function to determine age 
+function calculateAge($dob) {
+    $dob = new DateTime($dob);  // Convert the input string into a DateTime 
+    $today = new DateTime('today');  // Get the current date
+    $age = $dob->diff($today)->y;  // Calculate the difference in years between the two dates
+    return $age;
+}
+
+// Provided input values
+$name = "AMUTUHEIRE ISHAMEL";
+$dob = "1990-01-17";  // Date format: YYYY-MM-DD
+$address = "kabale, Nyakiharo";
+
+// Determine the person's age.
+$age = calculateAge($dob);
+
+// Display a welcome message.
+echo "$name, Welcome home!\n";
+echo "Your address is: $address\n";
+echo "You are $age years old!\n";
+?>
